@@ -1,0 +1,93 @@
+﻿ @model HomeVM
+    <!-- Footer start -->
+<footer id="footer">
+    <div class="footer-newsletter">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="footer-txt">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form action="">
+                        <input class="email" type="email" name="email">
+                        <input class="submit" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="link">
+                        <h4>Useful Links</h4>
+                        <ul class="m-0 p-0">
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">home</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">about us</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">services</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">Terms of service</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="link">
+                        <h4>Useful Links</h4>
+                        <ul class="m-0 p-0">
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">home</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">about us</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">services</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">Terms of service</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i><a href="#">privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="link">
+                        <h4>Useful Links</h4>
+                        <p>
+                            A108 Adam Street
+                            New York, NY 535022
+                            United States
+                        </p>
+                        <ul class="m-0 p-0">
+                            <li>Phone: <span>@Model.Settings.Phone</span></li>
+                            <li>Email: <span>@Model.Settings.Email</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="link">
+                        <h4>Useful Links</h4>
+                        <p>
+                            Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna
+                            derita valies darta donna mare fermentum iaculis eu non diam phasellus
+                        </p>
+                        <ul class="icons d-flex m-0 p-0">
+                            @foreach (var item in Model.SocialMedias)
+                            {
+                                <li><a href="@item.IconUrl"><i class="@item.Icon"></i></a></li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="copyright d-flex justify-content-center">
+            <span> © Copyright . All Rights Reserved</span>
+        </div>
+        <div class="design d-flex justify-content-center">
+            <span> Designed by </span>
+            <a href="#"> BootstrapMade</a>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->

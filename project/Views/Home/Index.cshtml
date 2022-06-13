@@ -1,0 +1,161 @@
+﻿@model HomeVM
+<!-- main start -->
+<main>
+    <!-- slider start -->
+    <section id="slider">
+        <div class="prevBtn">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="slider">
+            @foreach (var slider in Model.Sliders)
+            {
+
+                <div class="image">
+                    <img src="~/assets/image/@slider.Image" alt="">
+                    <div class="img-txt">
+                        <h2>@slider.Title</h2>
+                        <p>
+                            @slider.Description
+                        </p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="nextBtn">
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+    </section>
+    <!-- slider end -->
+    <!-- featured start -->
+    <section id="featured">
+        <div class="container">
+            <div class="featured">
+                <div class="row">
+                    @foreach (var featured in Model.Featureds)
+                    {
+                        <div class="my-2 col-12 col-sm-12 col-md-12 col-lg-4">
+                            <div class="featured-box">
+                                <div class="icon">
+                                    <i class="@featured.Icon"></i>
+                                </div>
+                                <div class="txt">
+                                    <h2>@featured.Title</h2>
+                                    <p>
+                                        @featured.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- featured end -->
+    <!-- about start -->
+    <section id="about">
+        <div class="container">
+            <div class="about">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="image">
+                            <img src="https://bootstrapmade.com/demo/templates/Eterna/assets/img/about.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="about-info">
+                            <div class="title">
+                                <h2>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                            <ul class="m-0 p-0">
+                                <li class="d-flex align-items-center">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="fa-regular fa-circle-check"></i>
+                                    <p>
+                                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                        dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
+                                        fugiat nulla pariatur.
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about end -->
+    <!-- cart start -->
+    <section id="cart">
+        <div class="container">
+            <div class="cart">
+                <div class="row">
+                   @await Html.PartialAsync("_CartPartialView", Model.Carts.Skip(6).Take(6))
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cart end -->
+    <!-- client start -->
+    <section id="client">
+        <div class="container">
+            <div class="client text-center">
+                <h2>Clients</h2>
+                <p>
+                    Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas
+                </p>
+            </div>
+            <div class="brands">
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-1.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-2.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-3.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-4.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-5.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-6.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-7.png" alt="">
+                </div>
+                <div class="brand-img">
+                    <img src="~/assets/image/brand/client-8.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- client end -->
+</main>
+<!-- main end -->

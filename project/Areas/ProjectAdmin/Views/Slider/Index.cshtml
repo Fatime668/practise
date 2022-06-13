@@ -1,0 +1,75 @@
+﻿@model List<Slider>
+<div class="card-body">
+
+    <div class="table-responsive pt-3">
+        <div class="my-2">
+            <a asp-controller="slider" asp-action="create" class="btn btn-outline-info">Create Slider</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Slider slider in Model)
+                {
+                <tr>
+                    <td>
+                        @slider.Id
+                    </td>
+                    <td>
+                        <img src="~/assets/image/@slider.Image" />
+
+                    </td>
+
+                    <td>
+                        @slider.Title
+                    </td>
+                    <td>
+                        @if (slider.Description.Length >= 30)
+                        {
+                            @(slider.Description.Substring(0, 30).ToString() + "...");
+                        }
+                        else
+                        {
+                            @slider.Description
+                        }
+                    </td>
+
+                    <td class="d-flex align-items-center" style="height:100%">
+                        <div class="detail" >
+                            <a class="btn btn-outline-primary" asp-controller="slider" asp-action="detail" asp-route-id="@slider.Id">Detail</a>
+                        </div>
+                        <div class="edit ms-2">
+                            <a class="btn btn-outline-warning" asp-controller="slider" asp-action="edit" asp-route-id="@slider.Id">Edit</a>
+                        </div>
+                        <div class="delete ms-2">
+                            <a class="btn btn-outline-danger" asp-controller="slider" asp-action="delete" asp-route-id="@slider.Id">Delete</a>
+                        </div>
+
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

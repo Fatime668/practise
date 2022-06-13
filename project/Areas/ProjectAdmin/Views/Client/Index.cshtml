@@ -1,0 +1,52 @@
+﻿@model List<Client>
+<div class="card-body">
+
+    <div class="table-responsive pt-3">
+        <div class="my-2">
+            <a asp-controller="client" asp-action="create" class="btn btn-outline-info">Create Logo</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Logo
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Client client in Model)
+                {
+    <tr>
+        <td>
+            @client.Id
+        </td>
+        <td>
+            <img src="~/assets/image/brand/@client.Logo" />
+        </td>
+        
+        <td class="d-flex">
+            <div class="detail">
+                <a class="btn btn-outline-primary" asp-controller="client" asp-action="detail" asp-route-id="@client.Id">Detail</a>
+            </div>
+            <div class="edit ms-2">
+                <a class="btn btn-outline-warning" asp-controller="client" asp-action="edit" asp-route-id="@client.Id">Edit</a>
+            </div>
+            <div class="delete ms-2">
+                <a class="btn btn-outline-danger" asp-controller="client" asp-action="delete" asp-route-id="@client.Id">Delete</a>
+            </div>
+
+        </td>
+    </tr>
+}
+
+            </tbody>
+        </table>
+    </div>
+</div>

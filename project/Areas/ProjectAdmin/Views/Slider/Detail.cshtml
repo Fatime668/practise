@@ -1,0 +1,26 @@
+﻿@model Slider
+<div>
+    <div>
+        <label asp-for="Id">Id</label><br />
+        <p>@Model.Id</p>
+    </div>
+    <div>
+        <label asp-for="Title">Title</label><br />
+        <p>@Model.Title</p>
+    </div>
+    <div>
+        <label asp-for="Description">Description</label><br />
+        <p>@Model.Description</p>
+    </div>
+    <div>
+        <label asp-for="Image">Image</label><br />
+        <img src="~/assets/image/@Model.Image" width="300"/>
+    </div>
+    <div class="my-3">
+        <form method="post">
+            <button class="btn btn-lg btn-pinterest" asp-controller="slider" asp-action="index">Back to Index</button>
+        </form>
+    </div>
+</div>
+
+

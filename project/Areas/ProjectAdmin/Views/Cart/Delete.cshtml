@@ -1,0 +1,24 @@
+﻿@model Cart
+<div>
+    <div>
+        <label asp-for="Id">Id</label>
+        <p>@Model.Id</p>
+    </div>
+    <div>
+        <label asp-for="Title">Title</label>
+        <p>@Model.Title</p>
+    </div>
+    <div>
+        <label asp-for="Description">Description</label>
+        <p>@Model.Description</p>
+    </div>
+    <div>
+        <label asp-for="IconUrl">IconUrl</label>
+        <p><i style="font-size:25px" class="@Model.IconUrl"></i></p>
+    </div>
+    <div>
+        <form method="post">
+            <button type="submit" class="btn btn-lg btn-pinterest">Delete</button>
+        </form>
+    </div>
+</div>

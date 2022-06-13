@@ -1,0 +1,71 @@
+﻿@model List<Featured>
+<div class="card-body">
+    <div class="table-responsive pt-3">
+        <div class="my-2">
+            <a asp-controller="featured" asp-action="create" class="btn btn-outline-info">Create featured</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Icon
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Featured featured in Model)
+                {
+                    <tr>
+                        <td>
+                            @featured.Id
+                        </td>
+                        <td>
+                            @featured.Title
+                        </td>
+                        <td>
+                            @if (featured.Description.Length >= 30)
+                            {
+                                @(featured.Description.Substring(0, 30).ToString() + "...");
+                            }
+                            else
+                            {
+                                @featured.Description
+                            }
+                        </td>
+                        <td>
+                            @featured.Icon
+
+                        </td>
+                        <td class="d-flex">
+                            <div class="detail">
+                                <a class="btn btn-outline-primary" asp-controller="featured" asp-action="detail" asp-route-id="@featured.Id">Detail</a>
+                            </div>
+                            <div class="edit ms-2">
+                                <a class="btn btn-outline-warning" asp-controller="featured" asp-action="edit" asp-route-id="@featured.Id">Edit</a>
+                            </div>
+                            <div class="delete ms-2">
+                                <a class="btn btn-outline-danger" asp-controller="featured" asp-action="delete" asp-route-id="@featured.Id">Delete</a>
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

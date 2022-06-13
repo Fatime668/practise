@@ -1,0 +1,71 @@
+﻿@model List<Cart>
+<div class="card-body">
+   
+    <div class="table-responsive pt-3">
+        <div class="my-2">
+            <a asp-controller="cart" asp-action="create" class="btn btn-outline-info">Create Cart</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        IconUrl
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Cart cart in Model)
+                {
+                <tr>
+                    <td>
+                        @cart.Id
+                    </td>
+                    <td>
+                        @cart.Title
+                    </td>
+                    <td>
+                        @if (cart.Description.Length >= 30)
+                        {
+                            @(cart.Description.Substring(0, 30).ToString() + "...");
+                        }
+                        else
+                        {
+                            @cart.Description
+                        }
+                    </td>
+                    <td>
+                        @cart.IconUrl
+
+                    </td>
+                    <td class="d-flex">
+                        <div class="detail">
+                            <a class="btn btn-outline-primary" asp-controller="cart" asp-action="detail" asp-route-id="@cart.Id">Detail</a>
+                        </div>
+                        <div class="edit ms-2">
+                            <a class="btn btn-outline-warning" asp-controller="cart" asp-action="edit" asp-route-id="@cart.Id">Edit</a>
+                        </div>
+                        <div class="delete ms-2">
+                            <a class="btn btn-outline-danger" asp-controller="cart" asp-action="delete" asp-route-id="@cart.Id">Delete</a>
+                        </div>
+
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

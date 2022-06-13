@@ -1,0 +1,16 @@
+﻿@model Client
+<div>
+    <div>
+        <label asp-for="Id">Id</label>
+        <p>@Model.Id</p>
+    </div>
+    <div>
+        <label asp-for="Logo">Logo</label><br />
+        <img width="150"  src="~/assets/image/brand/@Model.Logo"/>
+    </div>
+    <div class="my-3">
+        <form method="post">
+            <button class="btn btn-lg btn-pinterest" asp-controller="client" asp-action="index">Back to Index</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿
+@foreach (var cart in Model)
+{
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="cart-item">
+            <div class="icon">
+                <i class="@cart.IconUrl"></i>
+            </div>
+            <div class="cart-txt">
+                <h2>@cart.Title</h2>
+                <p>@cart.Description</p>
+            </div>
+        </div>
+    </div>
+}

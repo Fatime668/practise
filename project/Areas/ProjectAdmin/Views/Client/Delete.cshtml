@@ -1,0 +1,13 @@
+﻿@model Client
+<div>
+<div>
+    
+        <label asp-for="Logo">Logo</label><br />
+        <img src="~/assets/image/brand/@Model.Logo" width="100" />
+    </div>
+    <div class="my-3">
+        <form method="post">
+            <button type="submit" class="btn btn-lg btn-pinterest">Delete</button>
+        </form>
+    </div>
+</div>

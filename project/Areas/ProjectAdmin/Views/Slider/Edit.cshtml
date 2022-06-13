@@ -1,0 +1,23 @@
+﻿@model Slider
+<form method="post" class="form-control" enctype="multipart/form-data">
+    <div>
+        <label class="mb-3 ">Title</label>
+        <input class="form-control" asp-for="Title" /><br />
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div>
+        <label class="mb-3 ">Description</label>
+        <input class="form-control" asp-for="Description" /><br />
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label class="mb-3 ">Image</label>
+        <input class="form-control" accept="image/*" asp-for="Photo" /><br />
+        <span class="text-danger" asp-validation-for="Photo"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-secondary">Edit Slider</button>
+    </div>
+</form>
+
+
